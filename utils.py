@@ -13,7 +13,6 @@ DATA_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/d
 LOCAL_FILE_PATH = "compact.csv"
 
 # Fetch COVID-19 data using caching
-@st.cache_data(ttl=3600)  # Cache for 1 hour (applies mainly to download case)
 def load_data(url=DATA_URL, local_path=LOCAL_FILE_PATH):
     """Loads OWID data, prioritizing local file, then downloading. Processes dates, and filters to end of 2023."""
     data = pd.DataFrame() # Initialize empty DataFrame
