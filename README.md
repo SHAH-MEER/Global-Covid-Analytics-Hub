@@ -41,12 +41,11 @@ Covid/
 │   ├── 4_🌐_Regional_Analysis.py # Renamed from Historical_Analysis & updated
 │   ├── 5_💉_Vaccination_Tracker.py
 │   ├── 6_🏥🧪_Hospitalization_Testing.py
-│   ├── 7_📈_Time_Series_Forecasting.py # New
-│   └── 8_❗_Anomaly_Detection.py      # New
+│   ├── 7_📈_Time_Series_Forecasting.py 
+│   └── 8_❗_Anomaly_Detection.py      
 ├── README.md               # This file
 ├── requirements.txt        # Python dependencies
 ├── utils.py                # Helper functions (data loading, plotting, etc.)
-└── .venv/                  # Virtual environment directory (if created)
 ```
 *(Note: Page filenames might differ slightly based on previous steps)*
 
