@@ -1,0 +1,9 @@
+streamlit
+pandas
+numpy
+plotly
+statsmodels # For ARIMA/SARIMA forecasting
+# altair # Removed as charts are replaced by Plotly
+matplotlib
+requests 
+scikit-learn
