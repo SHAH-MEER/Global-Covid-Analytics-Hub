@@ -23,7 +23,7 @@ def load_data(url=DATA_URL, local_path=LOCAL_FILE_PATH):
             data = pd.read_csv(local_path)
             st.toast("Loaded data from local file.", icon="📁")
         else:
-            st.info(f"Local file '{local_path}' not found. Attempting to download from {url}...")
+            
             # Download data
             response = requests.get(url, timeout=60) # Increased timeout for potentially large file
             response.raise_for_status()  # Raise an exception for bad status codes
