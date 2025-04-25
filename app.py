@@ -43,7 +43,7 @@ st.divider()
 st.subheader("💾 Data Source")
 st.markdown("""
 *   **Source:** Our World in Data (OWID) COVID-19 Dataset.
-*   **Update Frequency:** The dashboard automatically fetches the latest data directly from the [OWID GitHub repository](https://github.com/owid/covid-19-data/tree/master/public/data) upon startup if `compact.csv` is not found locally. Local data is loaded instantly. Downloaded data is cached for 1 hour.
+*   **Update Frequency:** The dashboard automatically fetches the latest data directly from the [OWID GitHub repository](https://github.com/owid/covid-19-data/tree/master/public/data). Downloaded data is cached for 1 hour.
 *   **Data Cutoff:** Analysis and visualizations are based on data available up to **December 31, 2023**.
 *   **Processing:** The raw data undergoes cleaning, including date parsing, selection of relevant columns, filtering out aggregate regions, and calculation of 7-day rolling averages for new cases/deaths.
 """)
