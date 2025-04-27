@@ -93,8 +93,18 @@ st.divider()
 
 # Calculate Global Summary Stats for selected date
 data_on_date = data[data['date'] == pd.to_datetime(selected_date)]
-global_total_cases = pd.to_numeric(data_on_date['new_cases'], errors='coerce').sum()
-global_total_deaths = pd.to_numeric(data_on_date['new_deaths'], errors='coerce').sum()
+
+# Prefer new_cases/new_deaths, but fallback to total_cases/total_deaths if missing or all zero
+if not data_on_date.empty:
+    global_total_cases = pd.to_numeric(data_on_date['new_cases'], errors='coerce').sum()
+    global_total_deaths = pd.to_numeric(data_on_date['new_deaths'], errors='coerce').sum()
+    if (global_total_cases == 0 or np.isnan(global_total_cases)) and 'total_cases' in data_on_date.columns:
+        global_total_cases = pd.to_numeric(data_on_date['total_cases'], errors='coerce').sum()
+    if (global_total_deaths == 0 or np.isnan(global_total_deaths)) and 'total_deaths' in data_on_date.columns:
+        global_total_deaths = pd.to_numeric(data_on_date['total_deaths'], errors='coerce').sum()
+else:
+    global_total_cases = 0
+    global_total_deaths = 0
 
 st.subheader(f"Global Snapshot on {selected_date}")
 cols = st.columns(2)
